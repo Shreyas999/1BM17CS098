@@ -32,4 +32,4 @@ if vm==True and va==True:
     else:
         print("Rejected!")
 else:
-    print("Enter valid information")
+    print("Application Rejected")
