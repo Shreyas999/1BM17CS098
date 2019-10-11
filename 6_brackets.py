@@ -21,9 +21,9 @@ class brackets:
                     a.pop()
                     ai-=1
         if a==['*']:
-            print("Valid")
+            print(" Valid ")
         else:
-            print("Invalid")
+            print(" Invalid ")
 
 b1=brackets()
 b1.check()
