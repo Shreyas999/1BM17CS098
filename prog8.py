@@ -10,10 +10,14 @@ def insert():
 	usn=input("Enter usn:")
 	sem=int(input("Enter sem:"))
 	dept=input("Enter dept:")
-	conn.execute("INSERT INTO studentinfo(NAME,USN,SEM,DEPT) VALUES(?,?,?,?)",(name,usn,sem,dept))
-	conn.commit()
+	try:
+		conn.execute("INSERT INTO studentinfo(NAME,USN,SEM,DEPT) VALUES(?,?,?,?)",(name,usn,sem,dept))
+		conn.commit()
+		print("Insert successful\n")
+	except:
+		print("USN already exists")
 	conn.close()
-	print("Insert successful\n")
+	
 
 def display():
 	conn=sqlite3.connect("db8")	
@@ -38,7 +42,7 @@ def update():
 	sem=int(input("Enter sem:"))
 	dept=input("Enter dept:")
 	conn.execute("UPDATE studentinfo set NAME=? ,SEM=? ,DEPT=? where USN=?",(name,sem,dept,usn))
-	print()
+	print("Updated successfully")
 	conn.commit()
 	conn.close()
 
